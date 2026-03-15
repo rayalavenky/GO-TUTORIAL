@@ -1,0 +1,59 @@
+# =========================
+
+# Go .gitignore (Sample)
+
+# =========================
+
+# ---- Binaries ----
+
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# ---- Build folders ----
+
+bin/
+build/
+dist/
+tmp/
+
+# ---- Go workspace ----
+
+go.work
+go.work.sum
+
+# ---- Dependency directory (optional) ----
+
+vendor/
+
+# ---- Logs ----
+
+*.log
+air_errors.log
+
+# ---- Env files ----
+
+.env
+.env.*
+
+# ---- Coverage ----
+
+coverage.out
+
+# ---- OS files ----
+
+.DS_Store
+Thumbs.db
+
+# ---- IDE ----
+
+.vscode/
+.idea/
+
+# ---- Air (live reload temp) ----
+
+tmp/
