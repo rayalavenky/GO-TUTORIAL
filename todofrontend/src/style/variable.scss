@@ -1,0 +1,190 @@
+// scss-docs-start color-variables
+// scss-docs-start gray-color-variables
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000000;
+// scss-docs-end gray-color-variables
+
+// scss-docs-start gray-colors-map
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900,
+);
+
+$blue: #ff7f22;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #d63384;
+$red: #f44336;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #23ad6d;
+$teal: #20c997;
+$cyan: #0dcaf0;
+
+$colors: (
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
+  "black": $black,
+  "white": $white,
+  "gray": $gray-600,
+  "gray-dark": $gray-800,
+);
+
+$primary: $blue;
+$secondary: $gray-600;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-900;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+//Font size custom
+$font-size-custom: (
+  10: 10px,
+  11: 11px,
+  12: 12px,
+  13: 13px,
+  14: 14px,
+  15: 15px,
+  16: 16px,
+  17: 17px,
+  18: 18px,
+  19: 19px,
+  20: 20px,
+  21: 21px,
+  22: 22px,
+  23: 23px,
+  24: 24px,
+  36: 36px,
+  40: 40px,
+  48: 48px,
+);
+
+// Common Theme Variables
+$font-family-base: "Lato", sans-serif; // Body text
+$headings-font-family: "Kanit", sans-serif; // Headers (h1-h6)
+$grid-gutter-width: 0.8rem; // Grid gutter width
+$footer-height: 0px; // Footer height
+$header-height: 62px; // Header height
+$btn-border: #ffc297; // Button Border Colors
+$btn-primary: #ff7f22; // Primary Button Colors
+$btn-primary-text: #faf8f7; // Primary Button Text Colors
+$btn-primary-disabled-bg: #ffe6d3; // Primary Button Disabled Background Colors
+$btn-primary-disabled-text: #b49783; // Primary Button Disabled Text Colors
+$btn-primary-outline: #ff7f22; // Primary Button Outline Colors
+$btn-primary-outline-hover: #f05906; // Primary Button Outline Hover Colors
+$btn-primary-outline-text: $btn-primary-text; // Primary Button Outline Text Colors
+$btn-secondary: #33302e; // Secondary Button Colors
+$btn-secondary-text: $btn-primary-text; // Secondary Button Text Colors
+$btn-secondary-disabled-bg: #cecece; // Secondary Button Disabled Background Colors
+$btn-secondary-disabled-text: #8d8d8d; // Secondary Button Disabled Text Colors
+$btn-secondary-outline-border: #a8a8a8; // Secondary Button Outline Border Colors
+$btn-secondary-outline-text: $btn-primary-text; // Secondary Button Outline Text Colors
+$placeholder-color: #a8a8a8; // Placeholder Colors
+$icon-primary: #ff7f22; // Primary Icon Colors
+$icon-secondary: #33302e; // Secondary Icon Colors
+$font-weight-lighter: lighter; // Font Weight Lighter
+$font-weight-light: 300; // Font Weight Light
+$font-weight-normal: 400; // Font Weight Normal
+$font-weight-medium: 500; // Font Weight Medium
+$font-weight-semibold: 600; // Font Weight Semibold
+$font-weight-bold: 700; // Font Weight Bold
+$font-weight-bolder: bolder; // Font Weight Bolder
+$form-primary: #ff7f221a; // Form Primary Colors
+
+// Interaction States
+$interaction-minus-2: #ffe6d3; // Interaction Minus 2
+$interaction-minus-1: #ffc297; // Interaction Minus 1
+$interaction-plus-1: #b49783; // Interaction Plus 1
+$interaction-plus-2: #b2a398; // Interaction Plus 2
+
+// Light Theme Variables
+$app-bg-light: $white; // Application Background Colors
+$hyperlink-light: #00508d; // Hyperlink Colors
+$input-bg-light: $white; // input Background Colors
+$primary-bg-light: $btn-primary-text; // Primary Background Colors
+$secondary-bg-light: #f2ebe6; // Secondary Background Colors
+$border-1: #8d8d8d; // Border (Light Mode)
+$border-2: #cecece; // Border (Light Mode)
+$neutral-600: #4b4b4b; // Neutral Colors
+$neutral-500: #8e8e8e; // Neutral Colors
+$neutral-400: #cacaca; // Neutral Colors
+$neutral-300: #e1e1e1; // Neutral Colors
+$neutral-200: #eeeeee; // Neutral Colors
+$neutral-100: #ebebeb; // Neutral Colors
+$neutral-50: #f3f3f3; // Neutral Colors
+$form-card-bg-light: #fafafa; // Form Card Background
+$form-disabled-light: #e7e5e5; // Form Disabled Background
+$input-border-light: #8d8d8d; // Input Border Colors
+$input-border-lite-light: #cecece; // Input Border Lite Colors
+$black-50-light: #595755; // Black Shades
+$black-100-light: #33302e; // Black Shades
+$text-light-light: #faf8f7; // Text Colors
+$text-grey-light: #8f8f8f; // Text Colors
+$text-black-light: #33302e; // Text Colors
+$text-dark-light: #776558; // Text Colors
+
+// Dark Theme Variables
+$app-bg-dark: #151515; // Application Background Colors
+$hyperlink-dark: #1098ff; // Hyperlink Colors
+$input-bg-dark: #1e1e1e; // input Background Colors
+$primary-bg-dark: #151515; // Primary Background Colors
+$secondary-bg-dark: #1e1e1e; // Secondary Background Colors
+$border-1-dark: #363636; // Border (Dark Mode)
+$border-2-dark: #595959; // Border (Dark Mode)
+$neutral-600-dark: #fafafa; // Neutral Colors
+$neutral-500-dark: #f5f5f5; // Neutral Colors
+$neutral-400-dark: #eeeeee; // Neutral Colors
+$neutral-300-dark: #e1e1e1; // Neutral Colors
+$neutral-200-dark: #cacaca; // Neutral Colors
+$neutral-100-dark: #8e8e8e; // Neutral Colors
+$neutral-50-dark: #4b4b4b; // Neutral Colors
+$form-card-bg-dark: #1e1e1e; // Form Card Background
+$form-disabled-dark: #553f2f; // Form Disabled Background
+$input-border-dark: #4b4b4b; // Input Border Colors
+$input-border-lite-dark: #5d5c5c; // Input Border Lite Colors
+$black-50-dark: #faf8f7; // Black Shades Inverse
+$black-100-dark: #f2ebe6; // Black Shades Inverse
+$text-dark-dark: #faf8f7; // Text Colors
+$text-light-dark: #33302e; // Text Colors
+$text-grey-dark: #c3c3c3; // Text Colors
+$text-black-dark: #faf8f7; // Text Colors
+
+// Popover Variables
+$popover-border-radius: 10px !important;

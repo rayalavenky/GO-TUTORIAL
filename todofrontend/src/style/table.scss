@@ -1,0 +1,489 @@
+// 1. Define table color variables for light theme (default)
+@import "./variable";
+
+:root {
+  --table-bg: #{$app-bg-light};
+  --table-header-bg: #{$secondary-bg-light};
+  --table-header-fg: #{$text-dark-light};
+  --table-row-border: #{$border-2};
+  --table-row-hover: #{$neutral-100};
+  --table-header-hover-bg: #{$neutral-100};
+  --table-cell-fg: #{$text-black-light};
+  --table-row-selected: #{$form-primary};
+  --table-link: #{$hyperlink-light};
+  --table-avatar-bg: #{$secondary-bg-light};
+  --table-avatar-fg: #{$text-dark-light};
+  --table-action-btn: #{$gray-400};
+  --table-action-btn-hover: #{$neutral-200};
+  --table-scrollbar-track: #{$neutral-100};
+  --table-scrollbar-thumb: #{$border-2};
+  --table-scrollbar-thumb-hover: #a0a0a0;
+  --table-cell-text: #{$icon-primary};
+  --table-cell-bg: #{$secondary-bg-light};
+  --tabel-pacs-text: #{$app-bg-light};
+  --table-billing-text: #{$neutral-100-dark};
+  --table-subscrition-border: #{$neutral-300};
+  --data-text-color: #000;
+
+  --ag-grid-checkbox-border: #888888;
+  --ag-tooltip-bg: #{$app-bg-light};
+  --ag-tooltip-color: #{$app-bg-dark};
+  --role-type-color: #{$secondary-bg-light};
+}
+
+// 2. Override variables for dark theme
+.dark-theme {
+  --table-bg: #{$app-bg-dark};
+  --table-header-bg: #{$secondary-bg-dark};
+  --table-header-fg: #{$text-dark-dark};
+  --table-row-border: #{$border-1-dark};
+  --table-row-hover: #{$neutral-50-dark};
+  --table-header-hover-bg: #{$neutral-50-dark};
+  --table-cell-fg: #{$text-dark-dark};
+  --table-row-selected: #{$form-primary};
+  --table-link: #{$hyperlink-dark};
+  --table-avatar-bg: #{$secondary-bg-dark};
+  --table-avatar-fg: #{$text-dark-dark};
+  --table-action-btn: #{$gray-400};
+  --table-action-btn-hover: #{$neutral-100-dark};
+  --table-scrollbar-track: #{$secondary-bg-dark};
+  --table-scrollbar-thumb: #555;
+  --table-scrollbar-thumb-hover: #777;
+  --table-cell-text: #{$icon-primary};
+  --table-cell-bg: #{$btn-primary-text};
+  --tabel-pacs-text: #{$app-bg-dark};
+  --table-billing-text: #bfbaba;
+  --table-subscrition-border: #828282;
+  --data-text-color: #fff;
+
+  --ag-grid-checkbox-border: #fff;
+  --ag-tooltip-bg: rgb(54, 54, 54);
+  --ag-tooltip-color: #{$app-bg-light};
+  --role-type-color: #302e2d;
+}
+
+// 3. Use variables in your table styles
+
+.table {
+  margin-bottom: 0 !important;
+  > thead {
+    border-color: var(--table-row-border);
+  }
+}
+
+.table-nowrap {
+  th,
+  td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.table-card {
+  th {
+    background-color: var(--table-header-bg) !important;
+    color: var(--table-header-fg) !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    padding: 8px 10px;
+  }
+
+  td {
+    color: var(--table-cell-fg) !important;
+    font-size: 14px !important;
+    font-weight: 400;
+    padding: 0.4rem;
+    &:first-child {
+      padding-left: 16px;
+    }
+
+    &:last-child {
+      padding-right: 16px;
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .border-#{$color} {
+    &.table {
+      > thead {
+        border-color: $value !important;
+      }
+    }
+  }
+  .table-#{$color} {
+    &.table {
+      > thead {
+        border-bottom-color: lighten($value, 10%) !important;
+      }
+    }
+  }
+}
+
+.table > :not(caption) > * > * {
+  color:
+    var(--vz-table-color-state),
+    var(--vz-table-color-type, var(--vz-table-color, var(--table-cell-fg)));
+}
+
+.table {
+  .form-check {
+    padding-left: 0px;
+    margin-bottom: 0px;
+    .form-check-input {
+      margin-left: 0px;
+      margin-top: 0px;
+      float: none;
+      vertical-align: middle;
+    }
+  }
+  .sort {
+    position: relative;
+    &::before {
+      content: "\f035d";
+      position: absolute;
+      right: 0.5rem;
+      top: 18px;
+      font-size: 0.8rem;
+      font-family: "Material Design Icons";
+    }
+    &::after {
+      position: absolute;
+      right: 0.5rem;
+      content: "\f0360";
+      font-family: "Material Design Icons";
+      font-size: 0.8rem;
+      top: 12px;
+    }
+  }
+}
+
+.thead-color {
+  color: var(--table-header-fg) !important;
+  height: 36px !important;
+}
+
+.table-transparent {
+  background-color: transparent !important;
+}
+
+.ag-data-available-text {
+  color: var(--data-text-color);
+}
+
+.ag-theme-quartz.ag-custom {
+  --ag-background-color: var(--table-bg);
+  --ag-header-background-color: var(--table-header-bg);
+  --ag-header-foreground-color: var(--table-header-fg);
+  --ag-border-color: transparent !important;
+  --ag-row-hover-color: var(--table-row-hover);
+  --ag-header-cell-hover-background-color: var(--table-header-hover-bg);
+  --ag-font-family: $font-family-base;
+  --ag-font-size: 14px;
+  --ag-cell-horizontal-padding: 18px;
+  --ag-header-column-separator-display: none;
+  // --ag-checkbox-checked-color: #ff7f22 !important;
+  // --ag-checkbox-border-color: #ff7f22 !important;
+
+  --ag-checkbox-checked-background-color: #ff7f22;
+  --ag-checkbox-checked-border-color: #ff7f22;
+  --ag-checkbox-unchecked-border-color: var(--ag-grid-checkbox-border);
+  --ag-checkbox-indeterminate-border-color: var(--ag-grid-checkbox-border);
+
+  --ag-cell-horizontal-border: none !important;
+  --ag-header-column-resize-handle-color: #888888 !important;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ag-custom-height {
+  height: calc(100vh - 255px) !important;
+  overflow-y: auto !important;
+}
+
+.ag-custom-WL-height {
+  height: calc(100vh - 380px) !important;
+  overflow-y: auto !important;
+}
+
+.ag-custom-CL-height {
+  height: calc(100vh - 382px) !important;
+  overflow-y: auto !important;
+}
+
+.ag-custom-SG-height {
+  height: calc(100vh - 362px) !important;
+  overflow-y: auto !important;
+}
+
+.ag-custom-IV-height {
+  height: calc(100vh - 555px) !important;
+  overflow-y: auto !important;
+}
+
+/* must come AFTER ag-theme-quartz.css import */
+.ag-layout-auto-height .ag-center-cols-container,
+.ag-layout-auto-height .ag-center-cols-viewport {
+  min-height: 45px !important;
+}
+
+/* Header styles */
+.ag-theme-quartz .ag-header {
+  background: var(--ag-header-background-color);
+  color: var(--ag-header-foreground-color);
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: 1px solid var(--table-row-border);
+}
+
+.ag-theme-quartz .ag-header-cell,
+.ag-theme-quartz .ag-header-group-cell {
+  background: var(--ag-header-background-color);
+  border-right: none;
+  border-bottom: none;
+  color: var(--table-header-fg);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  padding: 10px;
+  box-shadow: 0px -1px 0px 0px #eeeeee inset;
+}
+
+/* Row styles */
+.ag-theme-quartz .ag-row {
+  background: var(--table-bg);
+  border-bottom: 1px solid var(--table-row-border);
+  font-size: 14px;
+  color: var(--table-cell-fg);
+}
+
+.ag-theme-quartz .ag-row-hover {
+  background: var(--ag-row-hover-color);
+}
+
+.ag-theme-quartz .ag-cell {
+  padding-left: 10px;
+  border-right: none;
+  color: var(--table-cell-fg);
+  font-size: 14px;
+}
+
+.ag-theme-quartz .ag-row:focus,
+.ag-theme-quartz .ag-cell:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ag-theme-quartz .ag-row-selected {
+  background-color: var(--table-row-selected) !important;
+}
+
+/* Bold and colored links/cells for group name */
+.ag-theme-quartz .ag-cell.avatar-name-cell a {
+  color: var(--table-link);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Circle avatar for Group initials */
+.ag-theme-quartz .ag-cell .group-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--table-avatar-bg);
+  color: var(--table-avatar-fg);
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 50%;
+  margin-right: 8px;
+  letter-spacing: 0.5px;
+}
+
+.ag-theme-quartz .ag-cell .group-name-link {
+  color: var(--table-link);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 2px;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis;
+}
+
+/* role cell*/
+.ag-theme-quartz .ag-cell .role-type {
+  color: var(--table-cell-text);
+  padding: 4px;
+  background: var(--role-type-color);
+  border-radius: 4px;
+}
+
+/*subscription cell*/
+.ag-theme-quartz .ag-cell .subscription-cell {
+  color: var(--table-cell-text);
+  padding: 4px;
+  background: var(--role-type-color);
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.ag-theme-quartz .ag-cell .subscription-cell.pacs-subscription {
+  color: var(--table-cell-bg);
+  background-color: var(--table-cell-text);
+}
+
+.ag-theme-quartz .ag-cell .subscription-cell.billing-subscription {
+  color: var(--table-billing-text);
+  background-color: transparent;
+  border: 1px solid var(--table-subscrition-border);
+}
+
+/* Actions cell */
+.ag-theme-quartz .ag-cell.actions-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 120px;
+}
+
+/* Icon button styles */
+.ag-theme-quartz .ag-cell .action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--table-action-btn);
+  font-size: 16px;
+  transition: color 0.2s;
+  padding: 0px;
+  margin: 0px 5px;
+}
+
+.ag-theme-quartz .ag-cell .action-btn:hover {
+  color: var(--table-action-btn-hover);
+}
+
+.ag-theme-quartz .ag-cell .action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Remove last row border */
+.ag-theme-quartz .ag-center-cols-clipper .ag-row:last-child {
+  border-bottom: none;
+}
+
+.ag-table-responsive {
+  width: 100%;
+  min-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  min-width: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .ag-theme-quartz .ag-header-cell,
+  .ag-theme-quartz .ag-cell {
+    font-size: 13px;
+    padding: 6px;
+  }
+  .ag-theme-quartz .ag-header {
+    font-size: 13px;
+  }
+  .ag-theme-quartz .ag-cell {
+    min-width: auto !important;
+  }
+  // Optionally hide columns by class
+  .ag-theme-quartz .ag-cell.hide-mobile,
+  .ag-theme-quartz .ag-header-cell.hide-mobile {
+    display: none !important;
+  }
+}
+
+.ag-theme-quartz ::-webkit-scrollbar {
+  width: 8px; /* vertical scrollbar width */
+  height: 10px; /* horizontal scrollbar height */
+}
+.ag-theme-quartz ::-webkit-scrollbar-track {
+  background: var(--table-scrollbar-track);
+}
+.ag-theme-quartz ::-webkit-scrollbar-thumb {
+  background: var(--table-scrollbar-thumb);
+  border-radius: 8px;
+}
+.ag-theme-quartz ::-webkit-scrollbar-thumb:hover {
+  background: var(--table-scrollbar-thumb-hover);
+}
+
+.ag-theme-quartz .ag-cell.ag-cell-left {
+  text-align: left;
+}
+.ag-theme-quartz .ag-cell.ag-cell-center {
+  text-align: center;
+}
+.ag-theme-quartz .ag-cell.ag-cell-right {
+  text-align: right;
+}
+.ag-theme-quartz .center-header .ag-header-cell-label {
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.group-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: var(--table-avatar-bg);
+  color: var(--table-avatar-fg);
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 50%;
+  margin-right: 8px;
+  letter-spacing: 0.5px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.ag-theme-quartz .ag-cell-focus:not(.ag-cell-range-selected):focus-within {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.row-parent {
+  background-color: #e6f7ff;
+  font-weight: bold;
+}
+
+.row-child {
+  background-color: #fafafa;
+  padding-left: 20px;
+}
+
+.ag-horizontal-left-spacer,
+.ag-horizontal-right-spacer {
+  display: none !important;
+}
+
+.ag-tooltip {
+  background-color: var(--ag-tooltip-bg) !important;
+  color: var(--ag-tooltip-color);
+}
+
+.ProseMirror table {
+  margin-bottom: 12px;
+}
+
+.ProseMirror table + p {
+  min-height: 1.2em;
+  cursor: text;
+}
+.row-disabled {
+  opacity: 0.5;
+  background-color: #b1aaaa;
+  pointer-events: none;
+  cursor: not-allowed;
+}
